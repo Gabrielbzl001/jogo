@@ -33,6 +33,11 @@ function Pergunta(props){
 }
 
 function Sobre(){
+    const body = {
+        "width": "98vw",
+        "height": "96vh",
+        "backgroundImage": "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)",
+    }
     const d = {
         "paddingLeft":"10px",
         "display":"grid",
@@ -40,7 +45,7 @@ function Sobre(){
         "rowGap": "30px"
     }
     return (
-    <div>
+    <div style={body}>
         <Head>
             <link rel="icon" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
             <title>Perguntas</title>
@@ -61,7 +66,7 @@ function Sobre(){
         
         </div>
         <Link href="/">
-            <a>Perguntas</a>
+            <button>Retornar para as perguntas</button>
         </Link>
     </div>
 
