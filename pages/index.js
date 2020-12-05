@@ -7,8 +7,8 @@ function Contador(props){
     const [cor, setCor] = useState("none");
 
     function mudaCor(){
-        if(cor == "block") setCor("none");
-        else setCor("block");
+            setCor("block");
+            setTimeout(() => {  setCor("none"); }, 5000);
     }
     const style = {
         "display": cor,
@@ -18,9 +18,9 @@ function Contador(props){
         "font": "sans-serif",
         "outline":"none",
         "border":"none",
-        "background-color":props.color,
-        "text-decoration":"none",
-        "justify-content":"center",
+        "backgroundColor":props.color,
+        "textDecoration":"none",
+        "justifyContent":"center",
         "width" : "300px",
         "height": "200px",
     }
@@ -34,27 +34,38 @@ function Contador(props){
 
 function Home(){
     const d = {
-        "padding-left":"10px",
+        "paddingLeft":"10px",
         "display":"grid",
-        "grid-template-columns": "repeat(5, 1fr)",
-        "row-gap": "30px"
+        "gridTemplateColumns": "repeat(5, 1fr)",
+        "rowGap": "30px"
+    }
+    const body = {
+        
+    }
+    function reset(){
+        document.querySelectorAll("#round").forEach(function(element){
+            element.display = "none";
+      })
     }
     return (
-    <div>
+    <div style={body}>
         <Head>
-            <title>Home</title>
+            <title>Respostas</title>
             <link rel="shortcut icon" type="image/png" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
         </Head>
-        <h1>Home</h1>
-        <div style={d}>
+        <h1>Descubra as perguntas corretas</h1>
+        <div id="round" style={d} onClick={reset}>
         <Contador color="red">pi</Contador>
         <Contador color="blue">Pedro Álvares Cabral</Contador>
         <Contador color="green">1990</Contador>
         <Contador color="yellow">hidrogênio</Contador>
+        <Contador color="brown">Pitágoras</Contador>
+        <Contador color="orange">Pitágoras</Contador>
+        <Contador color="purple">Pitágoras</Contador>
         <Contador color="pink">Pitágoras</Contador>
-        <Contador color="pink">Pitágoras</Contador>
-        <Contador color="pink">Pitágoras</Contador>
-        <Contador color="pink">Pitágoras</Contador>
+        <Contador color="#78C9FB">Pitágoras</Contador>
+        <Contador color="#13FE00">asdhsdaiuhsd</Contador>
+        
         </div>
         <Link href="/sobre">
             <a>Respostas</a>
