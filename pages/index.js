@@ -52,10 +52,10 @@ function Home(){
     return (
     <div style={body}>
         <Head>
-            <title>Respostas</title>
+            <title>Qual é a pergunta?</title>
             <link rel="shortcut icon" type="image/png" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
         </Head>
-        <h1>Descubra as perguntas corretas</h1>
+        <h1>Qual é a pergunta?</h1>
         <div id="round" style={d} onClick={reset}>
         <Contador color="red">pi</Contador>
         <Contador color="blue">Pedro Álvares Cabral</Contador>
