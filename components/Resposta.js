@@ -51,7 +51,7 @@ export default function Resposta(prop){
     }
 
     return (
-        <form method="GET" action="/sobre">
+        <form action="/sobre">
             <div>
             <input placeHolder="Nome" style={{display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="nome" onChange={handleChange}></input>
             <input style={{backgroundColor: "red", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p1" onChange={handleChange}></input>

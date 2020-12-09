@@ -12,7 +12,6 @@ export default async function handler(req, res) {
               .find({nome : req.query.nome})
               .toArray();
                 res.json(movies);
-             console.log(movies)
           } catch (error) {
             res.status(400).json({ success: false })
           }
