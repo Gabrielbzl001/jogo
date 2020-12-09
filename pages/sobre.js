@@ -69,7 +69,7 @@ function Sobre(props){
         
         </div>
         <Link href="/">
-            <button style={{marginLeft: '12px',width: "400px", fontSize: "20px"}}>Retornar para as perguntas</button>
+            <a>Retornar para as perguntas</a>
         </Link>
     </body>
 
