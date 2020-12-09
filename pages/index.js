@@ -29,7 +29,6 @@ function Home(){
         <Head>
             <title>Qual é a pergunta?</title>
             <link rel="shortcut icon" type="image/png" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         </Head>
         <h1>Qual é a pergunta?</h1>
         <div id="round" style={d} onClick={reset}>
