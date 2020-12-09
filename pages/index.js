@@ -13,7 +13,9 @@ function Home(){
         "alignItems": "center"
     }
     const body = {
-        
+        "margin": 0,
+        "padding": 0,
+        "border": 0,
         "backgroundImage": "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1 100%)",
     }
     function reset(){
@@ -23,10 +25,11 @@ function Home(){
     }
 
     return (
-    <div style={body}>
+    <body style={body}>
         <Head>
             <title>Qual é a pergunta?</title>
             <link rel="shortcut icon" type="image/png" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         </Head>
         <h1>Qual é a pergunta?</h1>
         <div id="round" style={d} onClick={reset}>
@@ -67,7 +70,7 @@ envolvendo o saber.</Contador>
 dos saberes pedagógicos.</Contador>
         <Resposta/>
         </div>
-    </div>
+    </body>
 
     )
 }
