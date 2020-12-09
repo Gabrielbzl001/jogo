@@ -14,8 +14,8 @@ export default function Resposta(prop){
         p10: '',
         })
     const respostas = {
-    "display": "block",
-    "position": "relative"
+    "display": "inline",
+    "position": ""
     }
     function handleChange(e){
         const {name, value} = e.target
@@ -28,8 +28,6 @@ export default function Resposta(prop){
     async function handleClick(e){
         e.preventDefault()
         if(form.nome) await salva(form)
-        console.log('clicado')
-        document.querySelector('#gabarito').disabled = false
     }
 
     async function salva(form){
@@ -41,11 +39,11 @@ export default function Resposta(prop){
             method: "POST",
             body: JSON.stringify(form)
           })
-          console.log(res)
+          document.querySelector('#gabarito').disabled = false
     }
     const b = {
-        "width" : "300px",
-        "height": "200px",
+        "width" : "400px",
+        "height": "300px",
         "outline":"none",
         "border":"none",
     }
@@ -53,20 +51,20 @@ export default function Resposta(prop){
     return (
         <form action="/sobre">
             <div>
-            <input placeHolder="Nome" style={{display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="nome" onChange={handleChange}></input>
-            <input style={{backgroundColor: "red", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p1" onChange={handleChange}></input>
-            <input style={{backgroundColor: "blue", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p2" onChange={handleChange}></input>
-            <input style={{backgroundColor: "green", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p3" onChange={handleChange}></input>
-            <input style={{backgroundColor: "yellow", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p4" onChange={handleChange}></input>
-            <input style={{backgroundColor: "brown", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p5" onChange={handleChange}></input>
-            <input style={{backgroundColor: "orange", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p6" onChange={handleChange}></input>
-            <input style={{backgroundColor: "purple", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p7" onChange={handleChange}></input>
-            <input style={{backgroundColor: "pink", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p8" onChange={handleChange}></input>
-            <input style={{backgroundColor: "#78C9FB", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p9" onChange={handleChange}></input>
-            <input style={{backgroundColor: "#13FE00", display: "block", borderRadius: "4px", margin: "3px", border: "none", outline: "none", width: "180px"}} type="text" name="p10" onChange={handleChange}></input>
+            <input placeholder="Nome" style={{display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="nome" onChange={handleChange}></input>
+            <input style={{backgroundColor: "red", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p1" onChange={handleChange}></input>
+            <input style={{backgroundColor: "blue", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p2" onChange={handleChange}></input>
+            <input style={{backgroundColor: "green", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p10" onChange={handleChange}></input>
+            <input style={{backgroundColor: "yellow", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p4" onChange={handleChange}></input>
+            <input style={{backgroundColor: "brown", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p5" onChange={handleChange}></input>
+            <input style={{backgroundColor: "orange", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p6" onChange={handleChange}></input>
+            <input style={{backgroundColor: "purple", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p7" onChange={handleChange}></input>
+            <input style={{backgroundColor: "pink", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p8" onChange={handleChange}></input>
+            <input style={{backgroundColor: "#78C9FB", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p9" onChange={handleChange}></input>
+            <input style={{backgroundColor: "#13FE00", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p10" onChange={handleChange}></input>
             </div>
-            <button onClick={handleClick}>Enviar respostas...ou perguntas?</button>
-            <button type="submit" id="gabarito" disabled="true">Ver Gabarito</button>
+            <button style={{marginLeft: '12px',width: "400px", fontSize: "20px"}} onClick={handleClick} >Enviar respostas...ou perguntas?</button>
+            <button style={{marginLeft: '12px', width: "400px", fontSize: "20px"}} type="submit" id="gabarito" disabled="true">Ver Gabarito</button>
         </form>
     )
 }

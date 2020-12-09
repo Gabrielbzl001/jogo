@@ -44,8 +44,6 @@ function Sobre(props){
         "gridTemplateColumns": "repeat(5, 1fr)",
         "rowGap": "30px"
     }
-    //const q = new URLSearchParams(urlObjectKeys).get("nome")
-    //console.log(props)
 
     return (
         
@@ -56,16 +54,36 @@ function Sobre(props){
         </Head>
         <h1>Gabarito</h1>
         <div style={d}>
-        <Pergunta color="red">Qual constante leva o valor 3,1415927?</Pergunta>
-        <Pergunta color="blue">Quem descobriu o Brasil?</Pergunta>
-        <Pergunta color="green">Em que ano a atriz Emma Watson nasceu?</Pergunta>
-        <Pergunta color="yellow">Qual o elemento mais abundante da Terra?</Pergunta>
-        <Pergunta color="brown">Quem ficou famoso pela divulgação da equação a² = b² + c²?</Pergunta>
-        <Pergunta color="orange">Quem ficou famoso pela divulgação da equação a² = b² + c²?</Pergunta>
-        <Pergunta color="purple">Quem ficou famoso pela divulgação da equação a² = b² + c²?</Pergunta>
-        <Pergunta color="pink">Quem ficou famoso pela divulgação da equação a² = b² + c²?</Pergunta>
-        <Pergunta color="#78C9FB">Quem ficou famoso pela divulgação da equação a² = b² + c²?</Pergunta>
-        <Pergunta color="#13FE00">adasdasd?</Pergunta>
+        <Pergunta color="red">Qual o nome do processo permanente e
+constante de aperfeiçoamento dos saberes
+necessários à atividade dos educadores e
+é realizada após a formação inicial com
+objetivo de assegurar um ensino de
+qualidade cada vez maior aos alunos?</Pergunta>
+        <Pergunta color="blue">Na escola pública, as coordenações
+pedagógicas constituem espaços
+privilegiados de formação continuada,
+planejamento e organização do trabalho
+pedagógico?</Pergunta>
+        <Pergunta color="green">Na escola pública, as coordenações
+pedagógicas constituem espaços
+privilegiados de formação continuada,
+planejamento e organização do trabalho
+pedagógico?</Pergunta>
+        <Pergunta color="yellow">Qual tendência reﬂexiva o texto apresenta
+como um novo paradigma na formação de
+professores?</Pergunta>
+        <Pergunta color="brown">Fale algumas características do conhecimento
+proﬁssional para Tardif (1999):</Pergunta>
+        <Pergunta color="orange">São categorias identiﬁcadas por Gauthier e
+seus colaboradores relacionadas às
+proﬁssões:</Pergunta>
+        <Pergunta color="purple">Ofícios sem saberes:</Pergunta>
+        <Pergunta color="pink">Saberes sem ofício ?</Pergunta>
+        <Pergunta color="#78C9FB">O que é o ofício feito de saberes?</Pergunta>
+        <Pergunta color="#13FE00">Pimenta (1999) em uma pesquisa
+identiﬁca três tipos de saberes da
+docência, quais são eles?</Pergunta>
         
         
         

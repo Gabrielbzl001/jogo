@@ -2,7 +2,6 @@ import { connectToDatabase } from "../utils/dbConnect";
 import {useState} from 'react'
 
 export default function Respostas(props){
-    const [select, setSelect] = useState('')
     const [respo, setRespo] = useState('')
     const colors = ['red', 'blue', 'green', 'yellow', 'brown', 'orange', 'purple', 'pink', '#78C9FB', '#13FE00']
 

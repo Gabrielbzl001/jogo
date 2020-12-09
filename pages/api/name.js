@@ -23,7 +23,6 @@ export default async function handler(req, res) {
             const movies = await db
               .collection("respostas")
               .insertOne(req.body)
-             console.log("funfou")
             res.status(201).json({ success: true })
           } catch (error) {
             res.status(400).json({ success: false })

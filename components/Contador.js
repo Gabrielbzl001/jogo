@@ -19,8 +19,8 @@ export default function Contador(props){
         "backgroundColor":props.color,
         "textDecoration":"none",
         "justifyContent":"center",
-        "width" : "200px",
-        "height": "100px",
+        "width" : "400px",
+        "height": "300px",
     }
 
     return(
