@@ -21,8 +21,8 @@ function Pergunta(props){
         "backgroundColor":props.color,
         "textDecoration":"none",
         "justifyContent":"center",
-        "width" : "300px",
-        "height": "200px",
+        "width" : "250px",
+        "height": "150px",
     }
 
     return(
@@ -32,7 +32,7 @@ function Pergunta(props){
     )
 }
 
-function Sobre(){
+function Sobre(props){
     const body = {
         "width": "98vw",
         "height": "96vh",
@@ -44,7 +44,11 @@ function Sobre(){
         "gridTemplateColumns": "repeat(5, 1fr)",
         "rowGap": "30px"
     }
+    //const q = new URLSearchParams(urlObjectKeys).get("nome")
+    //console.log(props)
+
     return (
+        
     <div style={body}>
         <Head>
             <link rel="icon" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
@@ -62,6 +66,7 @@ function Sobre(){
         <Pergunta color="pink">Quem ficou famoso pela divulgação da equação a² = b² + c²?</Pergunta>
         <Pergunta color="#78C9FB">Quem ficou famoso pela divulgação da equação a² = b² + c²?</Pergunta>
         <Pergunta color="#13FE00">adasdasd?</Pergunta>
+        
         
         
         </div>

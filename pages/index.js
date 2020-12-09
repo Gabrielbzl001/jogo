@@ -1,54 +1,29 @@
-import Link from 'next/link';
 import Head from "next/head"
-import {useState} from 'react';
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils';
-
-function Contador(props){
-    const [cor, setCor] = useState("none");
-
-    function mudaCor(){
-            setCor("block");
-            setTimeout(() => {  setCor("none"); }, 5000);
-    }
-    const style = {
-        "display": cor,
-        "font": "25px sans-serif, Arial"
-    }
-    const buttonStyle = {
-        "font": "sans-serif",
-        "outline":"none",
-        "border":"none",
-        "backgroundColor":props.color,
-        "textDecoration":"none",
-        "justifyContent":"center",
-        "width" : "300px",
-        "height": "200px",
-    }
-
-    return(
-        <div>
-            <button style={buttonStyle} id={props.id} onClick={mudaCor}><div style={style}>{props.children}</div></button>
-        </div>
-    )
-}
+import Link from 'next/link'
+import Contador from '../components/Contador'
+import Resposta from '../components/Resposta'
 
 function Home(){
+    
     const d = {
         "paddingLeft":"10px",
         "display":"grid",
         "gridTemplateColumns": "repeat(5, 1fr)",
-        "rowGap": "30px"
+        "rowGap": "30px",
+        "columnGap": "10px",
+        "alignItems": "center"
     }
     const body = {
         "width": "98vw",
         "height": "96vh",
-        "backgroundImage": "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)",
+        "backgroundImage": "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1 100%)",
     }
     function reset(){
         document.querySelectorAll("#round").forEach(function(element){
             element.display = "none";
       })
     }
+
     return (
     <div style={body}>
         <Head>
@@ -67,11 +42,8 @@ function Home(){
         <Contador color="pink">Pitágoras</Contador>
         <Contador color="#78C9FB">Pitágoras</Contador>
         <Contador color="#13FE00">asdhsdaiuhsd</Contador>
-        
+        <Resposta/>
         </div>
-        <Link href="/sobre">
-            <button>Gabarito</button>
-        </Link>
     </div>
 
     )
