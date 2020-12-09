@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
             const movies = await db
               .collection("respostas")
-              .find({})
+              .find({nome : req.query.nome})
               .toArray();
                 res.json(movies);
              console.log(movies)

@@ -1,5 +1,4 @@
 import {useState} from 'react'
-
 export default function Resposta(prop){
     const [form, setForm] = useState({
         nome: '',

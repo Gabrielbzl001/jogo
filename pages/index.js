@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Link from 'next/link'
 import Contador from '../components/Contador'
 import Resposta from '../components/Resposta'
 
