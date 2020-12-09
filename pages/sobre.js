@@ -21,8 +21,8 @@ function Pergunta(props){
         "backgroundColor":props.color,
         "textDecoration":"none",
         "justifyContent":"center",
-        "width" : "250px",
-        "height": "150px",
+        "width" : "400px",
+        "height": "300px",
     }
 
     return(
@@ -34,64 +34,44 @@ function Pergunta(props){
 
 function Sobre(props){
     const body = {
-        "width": "98vw",
-        "height": "96vh",
         "backgroundImage": "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)",
     }
     const d = {
         "paddingLeft":"10px",
         "display":"grid",
-        "gridTemplateColumns": "repeat(5, 1fr)",
-        "rowGap": "30px"
+        "gridTemplateColumns": "repeat(3, 1fr)",
+        "rowGap": "30px",
+        "columnGap": "10px",
+        "alignItems": "center"
     }
 
     return (
         
-    <div style={body}>
+    <body style={body}>
         <Head>
             <link rel="icon" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
             <title>Perguntas</title>
         </Head>
         <h1>Gabarito</h1>
         <div style={d}>
-        <Pergunta color="red">Qual o nome do processo permanente e
-constante de aperfeiçoamento dos saberes
-necessários à atividade dos educadores e
-é realizada após a formação inicial com
-objetivo de assegurar um ensino de
-qualidade cada vez maior aos alunos?</Pergunta>
-        <Pergunta color="blue">Na escola pública, as coordenações
-pedagógicas constituem espaços
-privilegiados de formação continuada,
-planejamento e organização do trabalho
-pedagógico?</Pergunta>
-        <Pergunta color="green">Na escola pública, as coordenações
-pedagógicas constituem espaços
-privilegiados de formação continuada,
-planejamento e organização do trabalho
-pedagógico?</Pergunta>
-        <Pergunta color="yellow">Qual tendência reﬂexiva o texto apresenta
-como um novo paradigma na formação de
-professores?</Pergunta>
-        <Pergunta color="brown">Fale algumas características do conhecimento
-proﬁssional para Tardif (1999):</Pergunta>
-        <Pergunta color="orange">São categorias identiﬁcadas por Gauthier e
-seus colaboradores relacionadas às
-proﬁssões:</Pergunta>
+        <Pergunta color="red">Qual o nome do processo permanente e constante de aperfeiçoamento dos saberes necessários à atividade dos educadores e é realizada após a formação inicial com objetivo de assegurar um ensino de qualidade cada vez maior aos alunos?</Pergunta>
+        <Pergunta color="blue">Na escola pública, as coordenações pedagógicas constituem espaços privilegiados de formação continuada, planejamento e organização do trabalho pedagógico?</Pergunta>
+        <Pergunta color="green">No Brasil, em que ano começou a dar destaque e enfoque nas práticas pedagógicas pelo docente?</Pergunta>
+        <Pergunta color="yellow">Qual tendência reﬂexiva o texto apresenta como um novo paradigma na formação de professores?</Pergunta>
+        <Pergunta color="brown">Fale algumas características do conhecimento proﬁssional para Tardif (1999):</Pergunta>
+        <Pergunta color="orange">São categorias identiﬁcadas por Gauthier e seus colaboradores relacionadas às proﬁssões:</Pergunta>
         <Pergunta color="purple">Ofícios sem saberes:</Pergunta>
-        <Pergunta color="pink">Saberes sem ofício ?</Pergunta>
+        <Pergunta color="pink">Saberes sem ofício?</Pergunta>
         <Pergunta color="#78C9FB">O que é o ofício feito de saberes?</Pergunta>
-        <Pergunta color="#13FE00">Pimenta (1999) em uma pesquisa
-identiﬁca três tipos de saberes da
-docência, quais são eles?</Pergunta>
+        <Pergunta color="#13FE00">Pimenta (1999) em uma pesquisa identiﬁca três tipos de saberes da docência, quais são eles?</Pergunta>
         
         
         
         </div>
         <Link href="/">
-            <button>Retornar para as perguntas</button>
+            <button style={{marginLeft: '12px',width: "400px", fontSize: "20px"}}>Retornar para as perguntas</button>
         </Link>
-    </div>
+    </body>
 
     )
 }

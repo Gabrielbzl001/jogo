@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Gabrielbzl001/mypage#readme",
   "dependencies": {
+    "mongodb": "^3.6.3",
     "mongoose": "^5.11.5",
     "next": "^10.0.3",
     "react": "^17.0.1",

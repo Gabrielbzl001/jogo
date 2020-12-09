@@ -12,16 +12,16 @@ export default function Respostas(props){
         setRespo(
             (
             <div>
-                <p style={{color: colors[0]}}>Pergunta: {per[0].p1} | Gabarito: Qual constante leva o valor 3,1415927?</p>
-                <p style={{color: colors[1]}}>Pergunta: {per[0].p2} | Gabarito: Quem descobriu o Brasil?</p>
-                <p style={{color: colors[2]}}>Pergunta: {per[0].p3} | Gabarito: Em que ano a atriz Emma Watson nasceu?</p>
-                <p style={{color: colors[3]}}>Pergunta: {per[0].p4} | Gabarito: Qual o elemento mais abundante da Terra?</p>
-                <p style={{color: colors[4]}}>Pergunta: {per[0].p5} | Gabarito: Quem ficou famoso pela divulgação da equação a² = b² + c²?</p>
-                <p style={{color: colors[5]}}>Pergunta: {per[0].p6} | Gabarito: Quem ficou famoso pela divulgação da equação a² = b² + c²?</p>
-                <p style={{color: colors[6]}}>Pergunta: {per[0].p7} | Gabarito: Quem ficou famoso pela divulgação da equação a² = b² + c²?</p>
-                <p style={{color: colors[7]}}>Pergunta: {per[0].p8} | Gabarito: Quem ficou famoso pela divulgação da equação a² = b² + c²?</p>
-                <p style={{color: colors[8]}}>Pergunta: {per[0].p9} | Gabarito: Quem ficou famoso pela divulgação da equação a² = b² + c²?</p>
-                <p style={{color: colors[9]}}>Pergunta: {per[0].p10} | Gabarito: Quem ficou famoso pela divulgação da equação a² = b² + c²?</p>
+                <p style={{color: colors[0]}}>Pergunta: {per[0]? per[0].p1 : "Não respondeu"} | Gabarito: Qual o nome do processo permanente e constante de aperfeiçoamento dos saberes necessários à atividade dos educadores e é realizada após a formação inicial com objetivo de assegurar um ensino de qualidade cada vez maior aos alunos?</p>
+                <p style={{color: colors[1]}}>Pergunta: {per[0]? per[0].p2: "Não respondeu"} | Gabarito: Na escola pública, as coordenações pedagógicas constituem espaços privilegiados de formação continuada, planejamento e organização do trabalho pedagógico?</p>
+                <p style={{color: colors[2]}}>Pergunta: {per[0]? per[0].p3: "Não respondeu"} | Gabarito: No Brasil, em que ano começou a dar destaque e enfoque nas práticas pedagógicas pelo docente?</p>
+                <p style={{color: colors[3]}}>Pergunta: {per[0]? per[0].p4: "Não respondeu"} | Gabarito: Qual tendência reﬂexiva o texto apresenta como um novo paradigma na formação de professores?</p>
+                <p style={{color: colors[4]}}>Pergunta: {per[0]? per[0].p5: "Não respondeu"} | Gabarito: Fale algumas características do conhecimento proﬁssional para Tardif (1999):</p>
+                <p style={{color: colors[5]}}>Pergunta: {per[0]? per[0].p6: "Não respondeu"} | Gabarito: São categorias identiﬁcadas por Gauthier e seus colaboradores relacionadas ãs proﬁssões:</p>
+                <p style={{color: colors[6]}}>Pergunta: {per[0]? per[0].p7: "Não respondeu"} | Gabarito: Ofícios sem saberes:</p>
+                <p style={{color: colors[7]}}>Pergunta: {per[0]? per[0].p8: "Não respondeu"} | Gabarito: Saberes sem ofício?</p>
+                <p style={{color: colors[8]}}>Pergunta: {per[0]? per[0].p9: "Não respondeu"} | Gabarito: O que é o ofício feito de saberes?</p>
+                <p style={{color: colors[9]}}>Pergunta: {per[0]? per[0].p10: "Não respondeu"} | Gabarito: Pimenta (1999) em uma pesquisa identiﬁca três tipos de saberes da docência, quais são eles?</p>
             </div>
             
             )
@@ -30,6 +30,7 @@ export default function Respostas(props){
     return(   <div>
         <h1>Escolha um nome</h1>
         <select onChange={handleSelect}>
+        <option value="" disabled selected>Escolha um nome</option>
             {props.nomes.map((n, index) => {
                 return(
                     <option key={index}>{n}</option>
@@ -43,7 +44,7 @@ export default function Respostas(props){
 )
 }
 
-export async function getServerSideProps(){
+export async function getStaticProps(){
     const { db } = await connectToDatabase();
 
     const data = await db
@@ -55,5 +56,5 @@ export async function getServerSideProps(){
     })
     
 
-    return { props: {nomes} }
+    return { props: {nomes}, revalidate: 1 }
     }

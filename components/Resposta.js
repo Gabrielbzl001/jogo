@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import Link from 'next/link'
 export default function Resposta(prop){
     const [form, setForm] = useState({
         nome: '',
@@ -13,10 +14,6 @@ export default function Resposta(prop){
         p9: '',
         p10: '',
         })
-    const respostas = {
-    "display": "inline",
-    "position": ""
-    }
     function handleChange(e){
         const {name, value} = e.target
         setForm({
@@ -31,7 +28,7 @@ export default function Resposta(prop){
     }
 
     async function salva(form){
-        const res = await fetch('api/name', {
+        await fetch('api/name', {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
@@ -40,16 +37,11 @@ export default function Resposta(prop){
             body: JSON.stringify(form)
           })
           document.querySelector('#gabarito').disabled = false
-    }
-    const b = {
-        "width" : "400px",
-        "height": "300px",
-        "outline":"none",
-        "border":"none",
+          document.querySelector('#gabarito').preventDefault = true
     }
 
     return (
-        <form action="/sobre">
+        <form>
             <div>
             <input placeholder="Nome" style={{display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="nome" onChange={handleChange}></input>
             <input style={{backgroundColor: "red", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p1" onChange={handleChange}></input>
@@ -64,7 +56,7 @@ export default function Resposta(prop){
             <input style={{backgroundColor: "#13FE00", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p10" onChange={handleChange}></input>
             </div>
             <button style={{marginLeft: '12px',width: "400px", fontSize: "20px"}} onClick={handleClick} >Enviar respostas...ou perguntas?</button>
-            <button style={{marginLeft: '12px', width: "400px", fontSize: "20px"}} type="submit" id="gabarito" disabled="true">Ver Gabarito</button>
+            <Link href="/sobre"><a><button style={{marginLeft: '12px', width: "400px", fontSize: "20px"}} id="gabarito" disabled="true">Ver Gabarito</button></a></Link>
         </form>
     )
 }
