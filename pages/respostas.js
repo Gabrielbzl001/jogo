@@ -45,7 +45,7 @@ export default function Respostas(props){
 )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
     const { db } = await connectToDatabase();
 
     const data = await db
