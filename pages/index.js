@@ -1,51 +1,50 @@
-import Head from "next/head"
-import Contador from '../components/Contador'
-import Resposta from '../components/Resposta'
+import Link from "next/link"
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Test from "../components/Test"
+import Pergunta from "../components/Pergunta"
 
-function Home(){
-    
-    const d = {
-        "paddingLeft":"10px",
-        "display":"grid",
-        "gridTemplateColumns": "repeat(3, 1fr)",
-        "rowGap": "30px",
-        "columnGap": "10px",
-        "alignItems": "center"
+
+export default function Home(){
+    const button = {
+        "font": "sans-serif",
+        "outline":"none",
+        "border":"none",
+        "backgroundColor": '#78C9FB',
+        "textDecoration":"none",
+        "justifyContent":"center",
+        "width" : "200px",
+        "height": "100px",
+        "borderRadius": "50px"
     }
-    const body = {
+     const body = 
+      {
         "margin": 0,
         "padding": 0,
         "border": 0,
-        "backgroundImage": "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1 100%)",
-    }
-    function reset(){
-        document.querySelectorAll("#round").forEach(function(element){
-            element.display = "none";
-      })
-    }
+        "backgroundImage": "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1 100%)",       }
 
-    return (
-    <body style={body}>
-        <Head>
-            <title>Qual é a pergunta?</title>
-            <link rel="shortcut icon" type="image/png" href="https://github.com/Gabrielbzl001/ghostk/blob/master/favicon.png?raw=true"/>
-        </Head>
-        <h1>Qual é a pergunta?</h1>
-        <div id="round" style={d} onClick={reset}>
-        <Contador color="red">A formação continuada de professoresimportante para a percepção das novas práticas pedagógicas, tanto do cotidiano escolar quanto de outras questões que perpassam a prática pedagógica.</Contador>
-        <Contador color="blue">O momento da coordenação pedagógica deve proporcionar aoeducador a oportunidade da formação continuada, planejamento e organização do trabalho pedagógico.</Contador>
-        <Contador color="green">1990</Contador>
-        <Contador color="yellow">A tendência de se considerar o professor em seu processo auto formativo, sua reelaboração dos saberes iniciais em confronto com sua prática vivenciada.</Contador>        <Contador color="brown">a) é especializado e formalizado; b) é adquirido na maioria das vezes na universidade, que prevê um título; c) é pragmático, voltado para a solução de problemas; d) é destinado a um grupo que de forma competente poderá fazer uso deles;</Contador>        <Contador color="orange">Ofícios sem saberes; saberes sem ofício e ofícios feitos de saberes.</Contador>
-        <Contador color="purple">abrange uma falta de sistematização de um saber próprio do docente envolvendo bom senso, intuição, experiência etc.</Contador>
-        <Contador color="pink">caracterizam-se pela formalização do ensino, reduzindo a sua complexidade e a reﬂexão que é presente na prática docente. Acabam-se tornando saberes que não condizem com a realidade.</Contador>
-        <Contador color="#78C9FB">Abrange vários saberes que são mobilizados pelo professor e sua práticaenvolvendo o saber.</Contador>
-        <Contador color="#13FE00">a) da experiência, b) do conhecimento, C) dos saberes pedagógicos.</Contador>
-        <Resposta/>
+    return(
+        <body style={body}>
+        <div style={{margin:'50px'}}>    
+            <h1>Instruções</h1>
+            <ul style={{fontSize:'22px', lineHeight:'50px'}}>
+                <li>Este jogo foi produzido com base no texto <strong>Saberes docentes e formação de professores: Um breve panorama da pesquisa brasileira</strong>, por Cecília Maria Fernandes Nunes</li>
+                <li>Monte sua equipe</li>
+                <li>Clique nos cartões para revelar seu conteúdo e discuta com sua equipe: Qual é a pergunta?</li>
+                <li>Cada campo, que tem um cartão de cor correspondente, deve ser preenchido com a resposta definida pelo grupo</li>
+                <li>Ao término da resolução, um botão para a página do gabarito será liberado</li>
+                <li>O objetivo do jogo é acertar o maior número de perguntas</li>
+                <li>As respostas serão enviadas para o professor, que conduzirá uma discussão com a turma sobre o entendimento de cada grupo acerca do tema proposto</li>
+            </ul>
+            <Link href="/jogar">
+                    <a><button style={button}>Jogar</button></a>
+            </Link>
+            <Test/>
+            <Test/>
+            <Test/>
+            <Test/>
+            <Pergunta display="none" cor="blue">as</Pergunta>
         </div>
-    </body>
-
+        </body>
     )
 }
-
-
-export default Home

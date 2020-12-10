@@ -62,7 +62,7 @@ function Sobre(props){
         <Pergunta color="orange">São categorias identiﬁcadas por Gauthier e seus colaboradores relacionadas às proﬁssões:</Pergunta>
         <Pergunta color="purple">Ofícios sem saberes:</Pergunta>
         <Pergunta color="pink">Saberes sem ofício?</Pergunta>
-        <Pergunta color="#78C9FB">O que é o ofício feito de saberes?</Pergunta>
+        <Pergunta color="#78C900">O que é o ofício feito de saberes?</Pergunta>
         <Pergunta color="#13FE00">Pimenta (1999) em uma pesquisa identiﬁca três tipos de saberes da docência, quais são eles?</Pergunta>
         
         
