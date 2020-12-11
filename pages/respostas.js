@@ -1,10 +1,12 @@
 import { connectToDatabase } from "../utils/dbConnect";
 import {useState} from 'react'
 
+
 export default function Respostas(props){
     const [respo, setRespo] = useState('')
-    const colors = ['red', 'blue', 'green', 'yellow', 'brown', 'orange', 'purple', 'pink', '#78C9FB', '#13FE00']
 
+    const colors = ['red', 'blue', 'green', 'yellow', 'brown', 'orange', 'purple', 'pink', '#78C9FB', '#13FE00']
+    
     async function handleSelect(e){
         const nome = e.target.value
         const res = await fetch(`api/name?nome=${nome}`)
@@ -17,7 +19,7 @@ export default function Respostas(props){
                 <p style={{color: colors[2]}}>Pergunta: {per[0]? per[0].p3: "Não respondeu"} | Gabarito: No Brasil, em que ano começou a dar destaque e enfoque nas práticas pedagógicas pelo docente?</p>
                 <p style={{color: colors[3]}}>Pergunta: {per[0]? per[0].p4: "Não respondeu"} | Gabarito: Qual tendência reﬂexiva o texto apresenta como um novo paradigma na formação de professores?</p>
                 <p style={{color: colors[4]}}>Pergunta: {per[0]? per[0].p5: "Não respondeu"} | Gabarito: Fale algumas características do conhecimento proﬁssional para Tardif (1999):</p>
-                <p style={{color: colors[5]}}>Pergunta: {per[0]? per[0].p6: "Não respondeu"} | Gabarito: São categorias identiﬁcadas por Gauthier e seus colaboradores relacionadas ãs proﬁssões:</p>
+                <p style={{color: colors[5]}}>Pergunta: {per[0]? per[0].p6: "Não respondeu"} | Gabarito: São categorias identiﬁcadas por Gauthier e seus colaboradores relacionadas às proﬁssões:</p>
                 <p style={{color: colors[6]}}>Pergunta: {per[0]? per[0].p7: "Não respondeu"} | Gabarito: Ofícios sem saberes:</p>
                 <p style={{color: colors[7]}}>Pergunta: {per[0]? per[0].p8: "Não respondeu"} | Gabarito: Saberes sem ofício?</p>
                 <p style={{color: colors[8]}}>Pergunta: {per[0]? per[0].p9: "Não respondeu"} | Gabarito: O que é o ofício feito de saberes?</p>
@@ -27,7 +29,8 @@ export default function Respostas(props){
             )
         )
     }
-    return(   <div>
+    return(   
+    <div>
         <h1>Escolha um nome</h1>
         <select onChange={handleSelect}>
         <option value="" disabled selected>Escolha um nome</option>
@@ -37,14 +40,22 @@ export default function Respostas(props){
                 )
             })}
         </select>
+        <h1>Escolha um tema</h1>
+        <select onChange={handleSelect}>
+            {props.temas.map((n, index) => {
+                return(
+                    <option key={index}>{n}</option>
+                )
+            })}
+        </select>
         <div>
             {respo}
         </div>
-        </div>
+    </div>
 )
 }
 
-export async function getStaticProps(){
+export async function getStaticProps(query){
     const { db } = await connectToDatabase();
 
     const data = await db
@@ -54,7 +65,14 @@ export async function getStaticProps(){
     let nomes = data.map(d => {
         return d.nome
     })
+    const res = await db
+    .collection("temas")
+    .find({})
+    .toArray();
+    let temas = res.map(d => {
+        return d.tema
+    })
     
 
-    return { props: {nomes}, revalidate: 1 }
+    return { props: {nomes, temas}, revalidate: 1}
     }

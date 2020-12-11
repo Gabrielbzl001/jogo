@@ -26,6 +26,7 @@ export default function Resposta(prop){
         e.preventDefault()
         if(form.nome) await salva(form)
     }
+    
 
     async function salva(form){
         await fetch('api/name', {
@@ -40,9 +41,18 @@ export default function Resposta(prop){
           document.querySelector('#gabarito').preventDefault = true
     }
 
+    const inputs = {
+        "paddingLeft":"10px",
+        "display":"grid",
+        "gridTemplateColumns": "repeat(2, 1fr)",
+        "rowGap": "20px",
+        "columnGap": "5px",
+        "alignItems": "center"
+    }
+
     return (
         <form>
-            <div>
+            <div style={inputs}>
             <input placeholder="Nome" style={{display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="nome" onChange={handleChange}></input>
             <input style={{backgroundColor: "red", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p1" onChange={handleChange}></input>
             <input style={{backgroundColor: "blue", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p2" onChange={handleChange}></input>
@@ -52,7 +62,7 @@ export default function Resposta(prop){
             <input style={{backgroundColor: "orange", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p6" onChange={handleChange}></input>
             <input style={{backgroundColor: "purple", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p7" onChange={handleChange}></input>
             <input style={{backgroundColor: "pink", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p8" onChange={handleChange}></input>
-            <input style={{backgroundColor: "#78C9FB", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p9" onChange={handleChange}></input>
+            <input style={{backgroundColor: "#78C900", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p9" onChange={handleChange}></input>
             <input style={{backgroundColor: "#13FE00", display: "block", borderRadius: "4px", margin: "10px", border: "none", outline: "none", width: "400px", fontSize: "40px"}} type="text" name="p10" onChange={handleChange}></input>
             </div>
             <button style={{marginLeft: '12px',width: "400px", fontSize: "20px"}} onClick={handleClick} >Enviar respostas...ou perguntas?</button>
