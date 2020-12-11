@@ -11,7 +11,7 @@ class Pergunta extends React.Component{
         }
     render(){
         const style = {
-            "font-color": this.props.cor,
+            "fontColor": this.props.cor,
             "display": this.props.display,
             "font": "25px sans-serif, Arial"
         }
