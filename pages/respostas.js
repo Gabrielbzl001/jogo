@@ -74,5 +74,5 @@ export async function getStaticProps(query){
     })
     
 
-    return { props: {nomes, temas}}
+    return { props: {nomes, temas}, revalidate: 1}
     }
