@@ -101,11 +101,7 @@ function Jogar(props){
             return <Pergunta key={i} cor={p.c} onClick={mudaCor} display={v} onChange={handleChange}>{p.p}</Pergunta>
         })}
         <div>
-<<<<<<< HEAD
         <button style={button} onClick={handleClick} >Enviar respostas</button>
-=======
-        <button style={button} onClick={handleClick} >Enviar respostas...ou perguntas?</button>
->>>>>>> main
         <Link href="/gabarito"><a><button style={button} id="gabarito" disabled>Ver Gabarito</button></a></Link>
         </div>
         </div>
