@@ -15,19 +15,6 @@ function Jogar(props){
         const {name, value} = e.target
         name != 'nome' ? form.p[name] = value : form[name] = value
     }
-    const button = {
-        "font": "22px sans-serif",
-        "outline":"none",
-        "border":"none",
-        "backgroundColor": '#78C9FB',
-        "textDecoration":"none",
-        "justifyContent":"center",
-        "width" : "250px",
-        "height": "100px",
-        "borderRadius": "50px",
-        "margin": "30px",
-        "marginLeft": "80px"
-    }
 
     async function salva(form){
         await fetch('api/name', {
