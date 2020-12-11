@@ -68,7 +68,7 @@ function Sobre(props){
         
         
         </div>
-        <Link href="/">
+        <Link href="/jogar">
             <a>Retornar para as perguntas</a>
         </Link>
     </body>

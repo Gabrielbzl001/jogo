@@ -1,14 +1,18 @@
 import React from 'react'
-    
+
+
 let cont = 1
 class Pergunta extends React.Component{
     constructor(props){
         super(props)
         this.cont = cont
-            cont++
+        if(cont == 10) cont = 0
+        cont++
         }
     render(){
         const style = {
+            "font-color": this.props.cor,
+            "display": this.props.display,
             "font": "25px sans-serif, Arial"
         }
         const buttonStyle = {
@@ -36,7 +40,7 @@ class Pergunta extends React.Component{
         }
     return(
         <div>
-                <button style={buttonStyle} id={this.id}><div style={style}>{this.props.children}</div></button>
+                <button style={buttonStyle} onClick={this.props.onClick} id={this.id}><div style={style}>{this.props.children}</div></button>
                 <input style={input} type="text" name={`p${this.cont}`} onChange={this.props.onChange}></input>
         </div>
     )
