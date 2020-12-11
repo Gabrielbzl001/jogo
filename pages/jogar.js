@@ -41,6 +41,18 @@ function Jogar(props){
           document.querySelector('#gabarito').disabled = false
           document.querySelector('#gabarito').preventDefault = true
     }
+    const button = {
+        "font": " 20px sans-serif",
+        "outline":"none",
+        "border":"none",
+        "backgroundColor": '#78C9FB',
+        "textDecoration":"none",
+        "justifyContent":"center",
+        "width" : "250px",
+        "height": "100px",
+        "borderRadius": "50px",
+        "margin": "80px"
+    }
     
     const d = {
         "paddingLeft":"10px",
@@ -89,7 +101,11 @@ function Jogar(props){
             return <Pergunta key={i} cor={p.c} onClick={mudaCor} display={v} onChange={handleChange}>{p.p}</Pergunta>
         })}
         <div>
+<<<<<<< HEAD
         <button style={button} onClick={handleClick} >Enviar respostas</button>
+=======
+        <button style={button} onClick={handleClick} >Enviar respostas...ou perguntas?</button>
+>>>>>>> main
         <Link href="/gabarito"><a><button style={button} id="gabarito" disabled>Ver Gabarito</button></a></Link>
         </div>
         </div>
