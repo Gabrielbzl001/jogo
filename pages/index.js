@@ -10,7 +10,7 @@ export default function Home(props){
         setTema(value)
     }
     const button = {
-        "font": "sans-serif",
+        "font": "35px sans-serif",
         "outline":"none",
         "border":"none",
         "backgroundColor": '#78C9FB',

@@ -6,8 +6,10 @@ export default async function handler(req, res) {
       case 'GET':
         try {
           const { db } = await connectToDatabase();
-          const movies = await db.collection("respostas").find({nome : req.query.nome}).toArray();
-          res.json(movies);
+          const respo = await db.collection("respostas").find({nome : req.query.nome}).toArray();
+          const tema = await db.collection("temas").find({tema: req.query.tema}).toArray();
+          let rest = tema[0].p.map(r => {return r})
+          res.json({respo, rest});
         } catch (error) {
           res.status(400).json({ success: false })
         }
@@ -15,7 +17,7 @@ export default async function handler(req, res) {
       case 'POST':
         try {
           const { db } = await connectToDatabase();
-
+          
           await db
             .collection("respostas")
             .insertOne(req.body)

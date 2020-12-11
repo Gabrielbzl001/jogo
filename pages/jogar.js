@@ -10,10 +10,23 @@ function Jogar(props){
         e.preventDefault()
         if(form.nome) await salva(form)
     }
-    let form = {}
+    let form = {nome: '', p: {}, tema: props.tema}
     function handleChange(e){
         const {name, value} = e.target
-        form[name] = value
+        name != 'nome' ? form.p[name] = value : form[name] = value
+    }
+    const button = {
+        "font": "22px sans-serif",
+        "outline":"none",
+        "border":"none",
+        "backgroundColor": '#78C9FB',
+        "textDecoration":"none",
+        "justifyContent":"center",
+        "width" : "250px",
+        "height": "100px",
+        "borderRadius": "50px",
+        "margin": "30px",
+        "marginLeft": "80px"
     }
 
     async function salva(form){
@@ -71,14 +84,13 @@ function Jogar(props){
         {props.p.map((p, i) =>{
             function mudaCor(e){
                 setV(v == 'block' ? 'none' : 'block')
-                console.log(e.target.display)
             }
             const [v, setV] = useState('none')
             return <Pergunta key={i} cor={p.c} onClick={mudaCor} display={v} onChange={handleChange}>{p.p}</Pergunta>
         })}
         <div>
-        <button style={{marginLeft: '12px',width: "400px", fontSize: "20px"}} onClick={handleClick} >Enviar respostas...ou perguntas?</button>
-        <Link href="/gabarito"><a><button style={{marginLeft: '12px', width: "400px", fontSize: "20px"}} id="gabarito" disabled>Ver Gabarito</button></a></Link>
+        <button style={button} onClick={handleClick} >Enviar respostas</button>
+        <Link href="/gabarito"><a><button style={button} id="gabarito" disabled>Ver Gabarito</button></a></Link>
         </div>
         </div>
     </div>
