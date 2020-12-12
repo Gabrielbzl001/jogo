@@ -13,16 +13,27 @@ export default function Home(props){
         "font": "35px sans-serif",
         "outline":"none",
         "border":"none",
-        "backgroundColor": '#78C9FB',
+        "backgroundColor": '#787FF0',
         "textDecoration":"none",
         "justifyContent":"center",
         "width" : "200px",
         "height": "100px",
         "borderRadius": "50px",
-        "margin": "30px"
+        "margin": "25px"
+    }
+    const selectButton = {
+        "font": "25px sans-serif",
+        "outline":"none",
+        "border":"none",
+        "backgroundColor": '#787FF0',
+        "textDecoration":"none",
+        "justifyContent":"center",
+        "borderRadius": "10px",
+        "margin": "5px"
     }
      const body = 
       {
+        "fontSize": "1.2rem",
         "margin": 0,
         "padding": 0,
         "border": 0,
@@ -33,19 +44,17 @@ export default function Home(props){
         <div style={{margin:'50px'}}>    
             <h1>Instruções</h1>
             <ul style={{fontSize:'22px', lineHeight:'50px'}}>
-                <li>Este jogo foi produzido com base no texto <strong>Saberes docentes e formação de professores: Um breve panorama da pesquisa brasileira</strong>, por Cecília Maria Fernandes Nunes</li>
                 <li>Escolha um tema</li>
-                <li>Monte sua equipe</li>
-                <li>Clique nos cartões para revelar seu conteúdo e discuta com sua equipe: Qual é a pergunta?</li>
-                <li>Cada campo, que tem um cartão de cor correspondente, deve ser preenchido com a resposta definida pelo grupo</li>
-                <li>Ao término da resolução, um botão para a página do gabarito será liberado</li>
+                <li>Jogue individualmente ou <strong>monte uma equipe</strong></li>
+                <li>Clique nos cartões para revelar o conteúdo e reflita: Qual é a pergunta?</li>
+                <li>Cada campo tem um cartão de cor correspondente e deve ser preenchido com sua conclusão</li>
+                <li>Ao término da resolução, um botão para o gabarito será liberado</li>
                 <li>O objetivo do jogo é acertar o maior número de perguntas</li>
-                <li>As respostas serão enviadas para o professor, que conduzirá uma discussão com a turma sobre o entendimento de cada grupo acerca do tema proposto</li>
+                <li>As respostas serão enviadas para o professor, que conduzirá uma discussão com a turma sobre o entendimento de cada estudante acerca do tema proposto</li>
             </ul>
             <h1>Tema</h1>
             <div>
-            <h1>Escolha um tema</h1>
-                <select onChange={handleSelect}>
+                <select style={selectButton} onChange={handleSelect}>
                 <option value="" disabled selected>Escolha um tema</option>
                     {props.temas.map((n, index) => {
                         return(
@@ -58,6 +67,7 @@ export default function Home(props){
                     <a><button style={button}>Jogar</button></a>
             </Link>
         </div>
+        <footer>Este jogo foi produzido com base no texto <strong>Saberes docentes e formação de professores: Um breve panorama da pesquisa brasileira</strong>, por Cecília Maria Fernandes Nunes</footer>
         </body>
     )
 }

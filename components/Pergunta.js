@@ -5,6 +5,7 @@ let cont = 1
 class Pergunta extends React.Component{
     constructor(props){
         super(props)
+        this.field = this.props.field
         this.cont = cont
         if(cont == 10) cont = 0
         cont++
@@ -41,7 +42,7 @@ class Pergunta extends React.Component{
     return(
         <div>
                 <button style={buttonStyle} onClick={this.props.onClick} id={this.id}><div style={style}>{this.props.children}</div></button>
-                <input style={input} type="text" name={`${this.cont}`} onChange={this.props.onChange}></input>
+                {this.field && <input style={input} type="text" name={`${this.cont}`} onChange={this.props.onChange}></input>}
         </div>
     )
     }

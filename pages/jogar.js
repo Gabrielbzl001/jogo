@@ -63,7 +63,7 @@ function Jogar(props){
         border: "none",
         outline: "none",
         width: "400px",
-        fontSize: "40px"
+        fontSize: "40px",
     }
     function reset(){
         document.querySelectorAll("#round").forEach(function(element){
@@ -85,11 +85,11 @@ function Jogar(props){
                 setV(v == 'block' ? 'none' : 'block')
             }
             const [v, setV] = useState('none')
-            return <Pergunta key={i} cor={p.c} onClick={mudaCor} display={v} onChange={handleChange}>{p.p}</Pergunta>
+            return <Pergunta field key={i} cor={p.c} onClick={mudaCor} display={v} onChange={handleChange}>{p.p}</Pergunta>
         })}
         <div>
         <button style={button} onClick={handleClick} >Enviar respostas</button>
-        <Link href="/gabarito"><a><button style={button} id="gabarito" disabled>Ver Gabarito</button></a></Link>
+        <Link href={{pathname: "/gabarito", query: {tema: props.tema}}}><a><button style={button} id="gabarito" disabled>Ver Gabarito</button></a></Link>
         </div>
         </div>
     </div>
